@@ -1,7 +1,7 @@
 create database bd_python;
 
 select * from products;
-SELECT nome, codigo, descricao, preco FROM products;
+S
 
 
 create table products (
