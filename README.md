@@ -1,5 +1,5 @@
-#  Nunes Sports
-
+#  Nunes Sports Web App
+ 
 ## Visão geral
 
 Este aplicativo gerencia um catálogo de produtos usando um servidor web Flask e um banco de dados MySQL para armazenar informações sobre os produtos. Ele fornece os seguintes recursos:
