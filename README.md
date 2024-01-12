@@ -42,18 +42,3 @@ Este aplicativo gerencia um catálogo de produtos usando um servidor web Flask e
 * Verifique se há mensagens de erro no console ao executar o aplicativo.
 * Certifique-se de que seu banco de dados MySQL está em execução e acessível.
 * Verifique se a configuração do banco de dados em `main.py` corresponde ao seu ambiente.
-
-**## Contribuindo**
-
-Sinta-se à vontade para contribuir para este projeto! Siga o fluxo de trabalho Git padrão para contribuir com alterações.
-
-**Alterações feitas**
-
-* **Título:** Alterado para "Aplicativo Nunes Sports" para refletir o nome da empresa.
-* **Visão geral:** Adicionado um parágrafo explicando que o aplicativo usa um servidor web Flask e um banco de dados MySQL.
-* **Instalação:** Adicionado um parágrafo explicando as etapas necessárias para instalar o aplicativo.
-* **Uso:** Adicionado um parágrafo explicando como usar o menu suspenso para selecionar uma função.
-* **Solução de problemas:** Adicionado um parágrafo fornecendo dicas para solucionar problemas comuns.
-* **Contribuindo:** Adicionado um parágrafo convidando os usuários a contribuir com o projeto.
-
-Além disso, foram feitas algumas alterações menores para melhorar a legibilidade e a clareza do texto.
