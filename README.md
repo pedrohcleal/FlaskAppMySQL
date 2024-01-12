@@ -1,6 +1,6 @@
-**# Aplicativo Nunes Sports**
+#  Nunes Sports
 
-**## Visão geral**
+## Visão geral
 
 Este aplicativo gerencia um catálogo de produtos usando um servidor web Flask e um banco de dados MySQL para armazenar informações sobre os produtos. Ele fornece os seguintes recursos:
 
@@ -9,7 +9,7 @@ Este aplicativo gerencia um catálogo de produtos usando um servidor web Flask e
 * **Edição de produtos:** Modifique detalhes existentes dos produtos.
 * **Remoção de produtos:** Remova produtos do banco de dados.
 
-**## Instalação**
+## Instalação
 
 1. Certifique-se de ter Python, Flask e Flask-MySQLdb instalados.
 2. Crie um banco de dados MySQL chamado `bd_python` com uma tabela chamada `products` contendo as seguintes colunas:
@@ -23,8 +23,7 @@ Este aplicativo gerencia um catálogo de produtos usando um servidor web Flask e
    app.config['MYSQL_USER'] = 'seu_usuario_mysql'
    app.config['MYSQL_PASSWORD'] = 'sua_senha_mysql'
    ```
-
-**## Uso**
+## Uso
 
 1. Execute o aplicativo:
    ```bash
@@ -37,7 +36,7 @@ Este aplicativo gerencia um catálogo de produtos usando um servidor web Flask e
    * **Editar Produto:** Permite editar um produto existente pelo ID.
    * **Excluir Produto:** Exclui um produto pelo ID.
 
-**## Solução de problemas**
+## Solução de problemas
 
 * Verifique se há mensagens de erro no console ao executar o aplicativo.
 * Certifique-se de que seu banco de dados MySQL está em execução e acessível.
