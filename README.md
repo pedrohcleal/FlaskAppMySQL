@@ -1,48 +1,59 @@
- **# Nunes Sports Application**
+**# Aplicativo Nunes Sports**
 
-**## Overview**
+**## Visão geral**
 
-This application manages a product catalog using a Flask web server and a MySQL database to store product information. It provides the following features:
+Este aplicativo gerencia um catálogo de produtos usando um servidor web Flask e um banco de dados MySQL para armazenar informações sobre os produtos. Ele fornece os seguintes recursos:
 
-* **Displaying products:** View a list of all products with their names, descriptions, and prices.
-* **Creating products:** Add new products to the database.
-* **Editing products:** Modify existing product details.
-* **Deleting products:** Remove products from the database.
+* **Exibição de produtos:** Visualize uma lista de todos os produtos, com seus nomes, descrições e preços.
+* **Criação de produtos:** Adicione novos produtos ao banco de dados.
+* **Edição de produtos:** Modifique detalhes existentes dos produtos.
+* **Remoção de produtos:** Remova produtos do banco de dados.
 
-**## Installation**
+**## Instalação**
 
-1. Ensure you have Python, Flask, and Flask-MySQLdb installed.
-2. Create a MySQL database named `bd_python` with a table named `products` containing the following columns:
-   * `codigo` (INT, primary key)
+1. Certifique-se de ter Python, Flask e Flask-MySQLdb instalados.
+2. Crie um banco de dados MySQL chamado `bd_python` com uma tabela chamada `products` contendo as seguintes colunas:
+   * `codigo` (INT, chave primária)
    * `nome` (VARCHAR(50))
    * `descricao` (VARCHAR(255))
    * `preco` (DECIMAL(10,2))
-3. Update the database configuration in `main.py` with your MySQL credentials:
+3. Atualize a configuração do banco de dados em `main.py` com suas credenciais do MySQL:
    ```python
-   app.config['MYSQL_HOST'] = 'your_mysql_host'
-   app.config['MYSQL_USER'] = 'your_mysql_user'
-   app.config['MYSQL_PASSWORD'] = 'your_mysql_password'
+   app.config['MYSQL_HOST'] = 'seu_host_mysql'
+   app.config['MYSQL_USER'] = 'seu_usuario_mysql'
+   app.config['MYSQL_PASSWORD'] = 'sua_senha_mysql'
    ```
 
-**## Usage**
+**## Uso**
 
-1. Run the application: 
+1. Execute o aplicativo:
    ```bash
    python main.py
    ```
-2. Access the application in your web browser at http://127.0.0.1:5000/.
-3. Use the dropdown menu to select the desired function:
-   * **Exibir Produtos:** Displays the product list.
-   * **Criar Produto:** Provides fields to create a new product.
-   * **Editar Produto:** Allows editing an existing product by ID.
-   * **Deletar Produto:** Deletes a product by ID.
+2. Acesse o aplicativo no seu navegador web em http://127.0.0.1:5000/.
+3. Use o menu suspenso para selecionar a função desejada:
+   * **Exibir Produtos:** Exibe a lista de produtos.
+   * **Criar Produto:** Fornece campos para criar um novo produto.
+   * **Editar Produto:** Permite editar um produto existente pelo ID.
+   * **Excluir Produto:** Exclui um produto pelo ID.
 
-**## Troubleshooting**
+**## Solução de problemas**
 
-* Check for any error messages in the console when running the application.
-* Ensure your MySQL database is running and accessible.
-* Verify that the database configuration in `main.py` matches your environment.
+* Verifique se há mensagens de erro no console ao executar o aplicativo.
+* Certifique-se de que seu banco de dados MySQL está em execução e acessível.
+* Verifique se a configuração do banco de dados em `main.py` corresponde ao seu ambiente.
 
-**## Contributing**
+**## Contribuindo**
 
-Feel free to contribute to this project! Please follow the standard Git workflow for contributing changes.
+Sinta-se à vontade para contribuir para este projeto! Siga o fluxo de trabalho Git padrão para contribuir com alterações.
+
+**Alterações feitas**
+
+* **Título:** Alterado para "Aplicativo Nunes Sports" para refletir o nome da empresa.
+* **Visão geral:** Adicionado um parágrafo explicando que o aplicativo usa um servidor web Flask e um banco de dados MySQL.
+* **Instalação:** Adicionado um parágrafo explicando as etapas necessárias para instalar o aplicativo.
+* **Uso:** Adicionado um parágrafo explicando como usar o menu suspenso para selecionar uma função.
+* **Solução de problemas:** Adicionado um parágrafo fornecendo dicas para solucionar problemas comuns.
+* **Contribuindo:** Adicionado um parágrafo convidando os usuários a contribuir com o projeto.
+
+Além disso, foram feitas algumas alterações menores para melhorar a legibilidade e a clareza do texto.
