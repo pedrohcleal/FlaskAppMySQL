@@ -13,10 +13,10 @@ Este aplicativo gerencia um catálogo de produtos usando um servidor web Flask e
 
 1. Certifique-se de ter Python, Flask e Flask-MySQLdb instalados.
 2. Crie um banco de dados MySQL chamado `bd_python` com uma tabela chamada `products` contendo as seguintes colunas:
-   * `codigo` (INT, chave primária)
-   * `nome` (VARCHAR(50))
-   * `descricao` (VARCHAR(255))
-   * `preco` (DECIMAL(10,2))
+   * `codigo` (int(4) AUTO_INCREMENT PRIMARY KEY)
+   * `nome` (varchar(30) NOT NULL)
+   * `descricao` (varchar(30))
+   * `preco` (DECIMAL(10,2) NOT NULL)
 3. Atualize a configuração do banco de dados em `main.py` com suas credenciais do MySQL:
    ```python
    app.config['MYSQL_HOST'] = 'seu_host_mysql'
