@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nunes Sports</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background-color: #f4f4f4;
+        }
+
+        h1 {
+            color: #333;
+        }
+
+        label {
+            display: block;
+            margin-top: 10px;
+        }
+
+        select, input {
+            width: 100%;
+            padding: 8px;
+            margin-top: 5px;
+            margin-bottom: 10px;
+            box-sizing: border-box;
+        }
+
+        button {
+            background-color: #4caf50;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        table {
+            border-collapse: collapse;
+            width: 100%;
+            margin-top: 20px;
+        }
+
+        th, td {
+            border: 1px solid #ddd;
+            padding: 10px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #4caf50;
+            color: white;
+        }
+
+        tbody tr:hover {
+            background-color: #f5f5f5;
+        }
+    </style>
+</head>
+<body>
+    <h1>Nunes Sports</h1>
+    
+    <label for="function">Escolha uma função:</label>
+    <select id="function" name="function" onchange="selectFunction()">
+        <option value="exibir">Exibir Produtos</option>
+        <option value="criar">Criar Produto</option>
+        <option value="editar">Editar Produto</option>
+        <option value="deletar">Deletar Produto</option>
+    </select>
+    
+    <div id="content">
+        <!-- Conteúdo dinâmico será exibido aqui -->
+    </div>
+    <button onclick="confirmFunction()">Confirmar</button>
+
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Nome</th>
+                <th>Descrição</th>
+                <th>Preço</th>
+            </tr>
+        </thead>
+        <input type="button" value="Atualizar" onClick="window.location.reload()"> 
+        <tbody>
+            {% for row in data %}
+                <tr>
+                    <td>{{ row[1] }}</td>
+                    <td>{{ row[0] }}</td>
+                    <td>{{ row[2] }}</td>
+                    <td>{{ row[3] }}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+    <script>
+        function selectFunction() {
+            var selectedFunction = document.getElementById("function").value;
+            var contentDiv = document.getElementById("content");
+    
+            // Limpar o conteúdo anterior
+            contentDiv.innerHTML = "";
+    
+            // Adicionar conteúdo dinâmico com base na função selecionada
+            if (selectedFunction === "criar") {
+                contentDiv.innerHTML = '<label for="nome">Nome:</label>' +
+                                       '<input type="text" id="nome" name="nome">' +
+                                       '<label for="descricao">Descrição:</label>' +
+                                       '<input type="text" id="descricao" name="descricao">' +
+                                       '<label for="preco">Preço:</label>' +
+                                       '<input type="text" id="preco" name="preco">';
+            } else if (selectedFunction === "editar") {
+                // Adicionar lógica para editar produto
+                contentDiv.innerHTML = '<label for="id_edit">Escolha o ID do Produto:</label>' +
+                                       '<input type="text" id="id_edit" name="id_edit">' +
+                                       '<label for="nome_edit">Novo Nome:</label>' +
+                                       '<input type="text" id="nome_edit" name="nome_edit">' +
+                                       '<label for="descricao_edit">Nova Descrição:</label>' +
+                                       '<input type="text" id="descricao_edit" name="descricao_edit">' +
+                                       '<label for="preco_edit">Novo Preço:</label>' +
+                                       '<input type="text" id="preco_edit" name="preco_edit">';
+            } else if (selectedFunction === "deletar") {
+                // Adicionar lógica para deletar produto
+                contentDiv.innerHTML = '<label for="id_delete">Escolha o ID do Produto para Deletar:</label>' +
+                                       '<input type="text" id="id_delete" name="id_delete">';
+            }
+        }
+    
+        function confirmFunction() {
+            var selectedFunction = document.getElementById("function").value;
+            
+            if (selectedFunction === "editar") {
+                // Adicionar lógica para confirmar edição
+                var id = document.getElementById("id_edit").value;
+                var nome = document.getElementById("nome_edit").value;
+                var descricao = document.getElementById("descricao_edit").value;
+                var preco = document.getElementById("preco_edit").value;
+    
+                sendData('/edit', { id: id, nome: nome, descricao: descricao, preco: preco });
+            } else if (selectedFunction === "deletar") {
+                // Adicionar lógica para confirmar deleção
+                var id = document.getElementById("id_delete").value;
+    
+                sendData('/delete', { id: id });
+            } else if (selectedFunction === "criar") {
+                var nome = document.getElementById("nome").value;
+                var descricao = document.getElementById("descricao").value;
+                var preco = document.getElementById("preco").value;
+
+                sendData('/create', { nome: nome, descricao: descricao, preco: preco });
+            }
+        }
+
+        function sendData(url, data) {
+            fetch(url, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(data),
+            })
+            .then(response => response.json())
+            .then(data => {
+                console.log('Resposta do Flask:', data);
+                window.location.reload();
+            })
+            .catch(error => {
+                console.error('Erro ao enviar dados para o Flask:', error);
+            });
+        }
+    </script>
+</body>
+</html>
