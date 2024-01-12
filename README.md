@@ -1,60 +1,48 @@
-# Nunes Sports - Sistema de Gerenciamento de Produtos
+ **# Nunes Sports Application**
 
-Este é um simples sistema de gerenciamento de produtos desenvolvido em Python usando o framework Flask e MySQL como banco de dados.
+**## Overview**
 
-## Requisitos
+This application manages a product catalog using a Flask web server and a MySQL database to store product information. It provides the following features:
 
-Certifique-se de ter as seguintes dependências instaladas:
+* **Displaying products:** View a list of all products with their names, descriptions, and prices.
+* **Creating products:** Add new products to the database.
+* **Editing products:** Modify existing product details.
+* **Deleting products:** Remove products from the database.
 
-- Flask
-- Flask-MySQLdb
-- MySQL Server
+**## Installation**
 
-## Configuração do Banco de Dados
+1. Ensure you have Python, Flask, and Flask-MySQLdb installed.
+2. Create a MySQL database named `bd_python` with a table named `products` containing the following columns:
+   * `codigo` (INT, primary key)
+   * `nome` (VARCHAR(50))
+   * `descricao` (VARCHAR(255))
+   * `preco` (DECIMAL(10,2))
+3. Update the database configuration in `main.py` with your MySQL credentials:
+   ```python
+   app.config['MYSQL_HOST'] = 'your_mysql_host'
+   app.config['MYSQL_USER'] = 'your_mysql_user'
+   app.config['MYSQL_PASSWORD'] = 'your_mysql_password'
+   ```
 
-- Host: localhost
-- Usuário: root
-- Senha: root
-- Banco de Dados: bd_python
+**## Usage**
 
-## Execução
+1. Run the application: 
+   ```bash
+   python main.py
+   ```
+2. Access the application in your web browser at http://127.0.0.1:5000/.
+3. Use the dropdown menu to select the desired function:
+   * **Exibir Produtos:** Displays the product list.
+   * **Criar Produto:** Provides fields to create a new product.
+   * **Editar Produto:** Allows editing an existing product by ID.
+   * **Deletar Produto:** Deletes a product by ID.
 
-Execute o arquivo `main.py` para iniciar o servidor Flask. Abra o navegador e acesse `http://127.0.0.1:5000/` para utilizar o sistema.
+**## Troubleshooting**
 
-## Funcionalidades
+* Check for any error messages in the console when running the application.
+* Ensure your MySQL database is running and accessible.
+* Verify that the database configuration in `main.py` matches your environment.
 
-### 1. Exibir Produtos
+**## Contributing**
 
-- Acesse a página inicial para visualizar a lista de produtos cadastrados.
-
-### 2. Criar Produto
-
-- Selecione a opção "Criar Produto" no menu suspenso.
-- Preencha os campos necessários e clique em "Confirmar" para adicionar um novo produto.
-
-### 3. Editar Produto
-
-- Selecione a opção "Editar Produto" no menu suspenso.
-- Escolha o ID do produto a ser editado, preencha os novos valores e clique em "Confirmar" para salvar as alterações.
-
-### 4. Deletar Produto
-
-- Selecione a opção "Deletar Produto" no menu suspenso.
-- Escolha o ID do produto a ser deletado e clique em "Confirmar" para remover o produto.
-
-## Estrutura do Projeto
-
-- `main.py`: Contém a lógica principal do sistema, incluindo rotas para exibir, criar, editar e deletar produtos.
-- `index.html`: Página HTML para a interface do usuário, com funcionalidades dinâmicas usando JavaScript.
-
-## Estilo Visual
-
-A interface do usuário é simples e amigável, com uma tabela para exibir os produtos e formulários dinâmicos para criação, edição e exclusão.
-
-## Observações
-
-Certifique-se de ter as bibliotecas necessárias instaladas antes de executar o aplicativo. Recomenda-se a utilização de ambientes virtuais para evitar conflitos de dependências.
-
-Para quaisquer problemas ou dúvidas, entre em contato com o desenvolvedor.
-
-**Desenvolvido por [Seu Nome]**
+Feel free to contribute to this project! Please follow the standard Git workflow for contributing changes.
